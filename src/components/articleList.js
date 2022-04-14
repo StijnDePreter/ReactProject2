@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectAllNews, fetchNews, selectLast10NewNews } from '../features/news/newsSlice'
+import { fetchNews, selectLast10NewNews } from '../features/news/newsSlice'
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'

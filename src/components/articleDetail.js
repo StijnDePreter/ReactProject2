@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 

@@ -1,14 +1,11 @@
 import React from 'react';
 import './App.css';
-import Home from './components/home';
 import CreateNews from './components/createNews';
 import EditNewsForm from './components/editNewsForm';
-import News from './components/articleDetail';
 import ArticleList from './components/articleList';
 import ArticleDetail from './components/articleDetail';
 import Info from './components/info';
-import { Switch, Route, BrowserRouter, Link, NavLink, Redirect } from 'react-router-dom';
-import fetchNews from './features/news/newsSlice';
+import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'

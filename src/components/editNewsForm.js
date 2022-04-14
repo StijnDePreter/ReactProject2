@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { selectNewsById, selectAllNews, changeNews } from '../features/news/newsSlice';
+import { changeNews } from '../features/news/newsSlice';
 import { useDispatch, useSelector } from 'react-redux'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
