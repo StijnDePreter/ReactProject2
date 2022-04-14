@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom'
 import { newsAdded } from '../features/news/newsSlice'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -21,7 +19,6 @@ function CreateNews() {
 
   const canSave = [title, content].every(Boolean)
 
-  const history = useHistory()
 
   const onSaveNewsClicked = async () => {
     if (canSave) {
