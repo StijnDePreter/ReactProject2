@@ -5,7 +5,7 @@ import EditNewsForm from './components/editNewsForm';
 import ArticleList from './components/articleList';
 import ArticleDetail from './components/articleDetail';
 import Info from './components/info';
-import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
+import { Switch, Route, BrowserRouter, Redirect, NavLink } from 'react-router-dom';
 
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
@@ -19,9 +19,17 @@ function Header() {
         <Container>
           <Navbar.Brand href="/">HBN - Het Beste Nieuws</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            {/* <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/createNews">Artikel aanmaken</Nav.Link>
-            <Nav.Link href="/info">Info</Nav.Link>
+            <Nav.Link href="/info">Info</Nav.Link> */}
+            <NavLink classname="navbarlink" to="/" exact activeClassName="active">Home</NavLink>
+            <NavLink classname="navbarlink" to="/createNews" activeClassName="active">Nieuwtje aanmaken</NavLink>
+            <NavLink classname="navbarlink" to="/info" activeClassName="active">Meer info</NavLink>
+            {/* <ul className="header">
+              <li><NavLink to="/" exact activeClassName="active">Home</NavLink></li>
+              <li><NavLink to="/createNews" activeClassName="active">Nieuwtje aanmaken</NavLink></li>
+              <li><NavLink to="/info" activeClassName="active">Meer info</NavLink></li>
+            </ul> */}
           </Nav>
         </Container>
       </Navbar>
