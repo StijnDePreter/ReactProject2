@@ -1,58 +1,81 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
+import Home from './components/home';
+import CreateNews from './components/createNews';
+import EditNewsForm from './components/editNewsForm';
+import News from './components/articleDetail';
+import ArticleList from './components/articleList';
+import ArticleDetail from './components/articleDetail';
+import Info from './components/info';
+import { Switch, Route, BrowserRouter, Link, NavLink, Redirect } from 'react-router-dom';
+import fetchNews from './features/news/newsSlice';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import Container from 'react-bootstrap/Container'
+
+
+function Header() {
+  return(
+    <>
+  <Navbar bg="dark" variant="dark">
+    <Container>
+    <Navbar.Brand href="/">HBN - Het Beste Nieuws</Navbar.Brand>
+    <Nav className="me-auto">
+      <Nav.Link href="/">Home</Nav.Link>
+      <Nav.Link href="/createNews">Artikel aanmaken</Nav.Link>
+      <Nav.Link href="/info">Info</Nav.Link>
+    </Nav>
+    </Container>
+  </Navbar>
+  <br />
+</>
+
+
+
+
+    // <div>
+    //   <h1>Simple Single Page Application</h1>
+    //   <ul className="header">
+    //       <li><NavLink to="/" exact activeClassName="active">Home</NavLink></li>
+    //       <li><NavLink to="/createNews" activeClassName="active">Nieuwtje aanmaken</NavLink></li>
+    //       <li><NavLink to="/info" activeClassName="active">Meer info</NavLink></li>
+    //   </ul>
+    // </div>
+  );
+}
+  
+
+
+function Main() {
+  return(
+  <div className="content">
+      <Switch>
+
+          <Route exact path="/" component={ArticleList} />
+          <Route exact path="/news" component={ArticleList} />
+          <Route exact path="/news/:newsId" component={ArticleDetail} />
+          <Route exact path="/news/editNews/:newsId" component={EditNewsForm} />
+          <Route exact path="/createNews" component={CreateNews} />
+          <Route exact path="/info" component={Info} />
+          <Redirect to="/"/>
+      </Switch>
+  </div>
   );
 }
 
+const App = () => {
+  return (
+      <BrowserRouter>
+          <Header />
+          <Container className="contact-content debug-border" >
+            <Main />
+          </Container>
+          
+      </BrowserRouter>
+  );
+};
+
 export default App;
+
+
