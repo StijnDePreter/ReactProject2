@@ -1,5 +1,15 @@
 .navbarlink {
-  color: red;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: rgba(255,255,255,.55);
+}
+
+.navbarlink:hover {
+  color: rgba(255,255,255,.75);
+}
+
+.navbarlink.active {
+  font-weight: bold;
 }
 
 

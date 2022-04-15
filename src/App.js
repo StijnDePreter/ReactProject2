@@ -19,23 +19,14 @@ function Header() {
         <Container>
           <Navbar.Brand href="/">HBN - Het Beste Nieuws</Navbar.Brand>
           <Nav className="me-auto">
-            {/* <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/createNews">Artikel aanmaken</Nav.Link>
-            <Nav.Link href="/info">Info</Nav.Link> */}
-            <NavLink classname="navbarlink" to="/" exact activeClassName="active">Home</NavLink>
-            <NavLink classname="navbarlink" to="/createNews" activeClassName="active">Nieuwtje aanmaken</NavLink>
-            <NavLink classname="navbarlink" to="/info" activeClassName="active">Meer info</NavLink>
-            {/* <ul className="header">
-              <li><NavLink to="/" exact activeClassName="active">Home</NavLink></li>
-              <li><NavLink to="/createNews" activeClassName="active">Nieuwtje aanmaken</NavLink></li>
-              <li><NavLink to="/info" activeClassName="active">Meer info</NavLink></li>
-            </ul> */}
+            <NavLink className="navbarlink" to="/" exact activeClassName="active">Home</NavLink>
+            <NavLink className="navbarlink" to="/createNews" activeClassName="active">Nieuwtje aanmaken</NavLink>
+            <NavLink className="navbarlink" to="/info" activeClassName="active">Meer info</NavLink>
           </Nav>
         </Container>
       </Navbar>
       <br />
     </>
-
   );
 }
 
